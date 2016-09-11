@@ -5,18 +5,21 @@ var callFriend = function(){
   }
   return callF;
 };
-
-//Above you're given a callFriend function that returns another function. 
+console.log(callFriend(callF(801-404-1608)))
+//Above you're given a callFriend function that returns another function.
 //Do what you need to do in order to call your function and get 'Calling Jake at 435-215-9248' in your console.
 
   //code here
-
+  var callFunc = callFriend();
+  callFunc(8014041608);
 
 
 /*
 
-Write a function that accepts a function as it's first argument and returns a new function (which calls the original function that was passed in) that can only ever be executed once.
+Write a function that accepts a function as it's first argument and returns a new function
+(which calls the original function that was passed in) that can only ever be executed once.
 
-Once completed, add a second arguments that allows the function to be executed N number of times. After the function has been called N number of times, console.log('STAHHP');
+Once completed, add a second arguments that allows the function to be executed N number of times.
+ After the function has been called N number of times, console.log('STAHHP');
 
 */

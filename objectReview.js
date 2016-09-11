@@ -1,18 +1,32 @@
-//Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category. 
+//Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
 
   //Your code here
+var favoriteThings = {
+  band: 'Blink 182',
+  food: 'Pizza',
+  person: 'Oliver Ferris',
+  movie: 'Avengers',
+  holiday: 'Christmas'
+};
 
 //After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 
   //Your code here
+  favoriteThings.car = 'NSX';
+  favoriteThings.brand = 'Hostess';
 
-//Now change the food key in your favoriteThings object to be 'Lettuce' and change the book key in your favoriteThings object to be '50 Shades of Gray'. 
+//Now change the food key in your favoriteThings object to be 'Lettuce' and change the book key in your favoriteThings object to be '50 Shades of Gray'.
 
   //Your code here
+favoriteThings.food = 'lettuce';
+favoriteThings.book = '50 Shades of Grey';
+
 
 //Now, alert your favorite person, then alert your favorite book.
 
   //Your code here
+  alert(favoriteThings.person);
+  alert(favoriteThings.book);
 
 
 
@@ -21,7 +35,7 @@
 
 
 var user = {
-    name: 'Tyler McGinnis', 
+    name: 'Tyler McGinnis',
     email: null,
     pwHash: 'U+Ldlngx2BYQk',
     birthday: undefined,
@@ -32,13 +46,20 @@ var user = {
 //Above you're given a user object. Loop through the user object checking to make sure that each value is truthy. If it's not truthy, remove it from the object. hint: 'delete'.
 
   //Your code here
+  for (var key in user) {
+     if (!user[key]) {
+       delete user[key];
+     }
+   }
 
 //Once you get your truthy object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
   //Your code here
+  user.name = 'Mark Ferris';
+  user.username = 'littleferris';
 
 //Now console.log your object and make sure it looks right.
-
+console.log(user);
   //Your code here
 
 
@@ -47,26 +68,56 @@ var user = {
 
 
 
-//create an empty object called methodCollection. 
+//create an empty object called methodCollection.
 
   //Your code here
+var methodCollection = [];
 
-//Now add two methods (functions that are properties on objects) to your methodCollection object. One called 'alertHello' which alerts 'hello' and another method called logHello which logs 'hello' to the console. 
-
-  //Your code here
-
-//Now call your alertHello and logHello methods. 
+//Now add two methods (functions that are properties on objects) to your methodCollection object. One called 'alertHello' which alerts 'hello' and another method called logHello which logs 'hello' to the console.
 
   //Your code here
+methodCollection.alertHello = function () {alert('hello')}
+methodCollection.logHello = function () {console.log('hello')}
 
+//Now call your alertHello and logHello methods.
+
+  //Your code here
+methodCollection.alertHello();
+methodCollection.logHello();
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 
 
-//write a function called voweler that accepts a string, and returns an object with the keys being all the vowels in that string, and the values being how many times that particular vowel was in the string.
+//write a function called voweler that accepts a string, and returns an object with the keys being all the vowels in that string,
+//and the values being how many times that particular vowel was in the string.
 //voweler("This is a test") --> {i: 2, a: 1, e: 1};
 
-
-
+function voweler(str) {
+  var a = 0;
+  var e = 0;
+  var i = 0;
+  var o = 0;
+  var u = 0;
+  var result = {};
+  for (var x = 0; x < str.length; x++) {
+    if (str.charAt(x) === 'a') {
+      result.a = ++a;
+    } else if (str.charAt(x) === 'e') {
+        result.e = ++e;
+    } else if (str.charAt(x) === 'i') {
+        result.i = ++i;
+    } else if (str.charAt(x) === 'o') {
+        result.o = ++o;
+    }else if (str.charAt(x) === 'u') {
+        result.u = ++u;
+    }
+  }
+  for (var key in result) {
+    if (result[key] === 0) {
+      delete result[key];
+    }
+  }
+return result;
+}
